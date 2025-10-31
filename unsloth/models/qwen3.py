@@ -445,6 +445,7 @@ class FastQwen3Model(FastLlamaModel):
             model_patcher     = FastQwen3Model,
             tokenizer_name    = tokenizer_name,
             trust_remote_code = trust_remote_code,
+            fullgraph         = False,
             **kwargs,
         )
     pass

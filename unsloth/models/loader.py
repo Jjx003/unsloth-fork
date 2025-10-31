@@ -170,7 +170,8 @@ class FastLanguageModel(FastLlamaModel):
                 resize_model_vocab         = resize_model_vocab, # [TODO] No effect
                 revision                   = revision,
                 return_logits              = False, # Return logits
-                fullgraph                  = True, # No graph breaks
+                # fullgraph                  = True, # No graph breaks
+                fullgraph                  = False,
                 use_exact_model_name       = use_exact_model_name,
                 offload_embedding          = offload_embedding,
                 float32_mixed_precision    = float32_mixed_precision,
@@ -447,7 +448,8 @@ class FastLanguageModel(FastLlamaModel):
                 resize_model_vocab         = resize_model_vocab, # [TODO] No effect
                 revision                   = revision,
                 return_logits              = False, # Return logits
-                fullgraph                  = True, # No graph breaks
+                # fullgraph                  = True, # No graph breaks
+                fullgraph                  = False,
                 use_exact_model_name       = use_exact_model_name,
                 offload_embedding          = offload_embedding,
                 float32_mixed_precision    = float32_mixed_precision,
@@ -588,7 +590,8 @@ class FastModel(FastBaseModel):
         resize_model_vocab         = None, # [TODO] No effect
         revision                   = None,
         return_logits              = False, # Return logits
-        fullgraph                  = True, # No graph breaks
+        # fullgraph                  = True, # No graph breaks
+        fullgraph                  = False,
         use_exact_model_name       = False,
         auto_model                 = None,
         whisper_language           = None,
@@ -956,12 +959,14 @@ class FastModel(FastBaseModel):
                 shape_padding           = True,
                 cudagraphs              = False,
                 debug                   = False,
-                fullgraph               = fullgraph,
+                # fullgraph               = fullgraph,
+                fullgraph               = False,
                 import_from_cache       = False,
                 disable                 = False,
                 return_logits           = return_logits,
                 trust_remote_code       = trust_remote_code,
                 unsloth_force_compile   = unsloth_force_compile,
+
             )
         pass
         # Fix SDPA issues
